@@ -1,4 +1,3 @@
-
 const scene = new THREE.Scene();
 
 /* (
@@ -12,13 +11,13 @@ const camera = new THREE.PerspectiveCamera(100,window.innerWidth/window.innerHei
 // The renderer: something that draws 3D objects onto the canvas
 const renderer = new THREE.WebGLRenderer( { alpha: true } );
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x000000, 0);//Background color = Use Hex Code (0xHexCode)
+renderer.setClearColor(0x000000, 0 );//Background color = Use Hex Code (0xHexCode)
 
 document.body.appendChild(renderer.domElement);
 
 const cube = {
   //Geometry/Shape + Size of 3D Object
-  geometry: new THREE.CubeGeometry(4,4,4),
+  geometry: new THREE.CubeGeometry(5,5,5),
   //The material / appearance of the cube
   material: new THREE.MeshBasicMaterial({color: 0x00FFFF})
 };
@@ -29,9 +28,27 @@ cube.mesh = new THREE.Mesh(cube.geometry, cube.material);
 scene.add(cube.mesh);
 
 //Camera Position = The user's view
-camera.position.z = 25;
-camera.position.x = 3;
-camera.position.y = -24;
+camera.position.z = 20;
+camera.position.x = 0;
+camera.position.y = 0;
+
+// var texture = THREE.ImageUtils.loadTexture( 'Galaxy.jpg' );
+//   var backgroundMesh = new THREE.Mesh(
+//   new THREE.PlaneGeometry(2.5, 2, 0),
+//   new THREE.MeshBasicMaterial({
+//   map: texture
+// }));
+
+// backgroundMesh .material.depthTest = true;
+// backgroundMesh .material.depthWrite = false;
+
+// // Create your background scene
+// var backgroundScene = new THREE.Scene();
+// var backgroundCamera = new THREE.Camera();
+// backgroundScene .add(backgroundCamera);
+// backgroundScene .add(backgroundMesh);
+
+
 
 function render(){
 //Render the scene and camera => Outputs the scene and Camera
@@ -47,7 +64,16 @@ requestAnimationFrame(render);
 //Render the background image and camera
   renderer.autoClear = true;
   renderer.clear();
+  // renderer.render(backgroundScene , backgroundCamera);
   renderer.render(scene, camera);
 };
 
-render();
+render()
+
+
+
+document.querySelector("#button").addEventListener("click",function(){
+    const prompts = ["What would you do if you woke up one morning to find yourself invisible?", " Describe the perfect day.  Put in as many details as you can.  Make it a possible day, not a 'dream day'.", "Who is your favorite person in all the world and why?", "Where do you see yourself in 10 years?"];
+    const randomPrompt = prompts[Math.floor(Math.random()*prompts.length)]
+    document.getElementById("prompt").value = randomPrompt;
+})
