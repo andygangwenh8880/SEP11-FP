@@ -51,3 +51,9 @@ requestAnimationFrame(render);
 };
 
 render();
+
+document.querySelector("#button").addEventListener("click",function(){
+    const prompts = ["What would you do if you woke up one morning to find yourself invisible?", " Describe the perfect day.  Put in as many details as you can.  Make it a possible day, not a 'dream day'.", "Who is your favorite person in all the world and why?", "Where do you see yourself in 10 years?"];
+    const randomPrompt = prompts[Math.floor(Math.random()*prompts.length)]
+    document.getElementById("prompt").value = randomPrompt;
+})
