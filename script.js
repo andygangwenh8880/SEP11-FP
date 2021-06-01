@@ -18,9 +18,9 @@ document.body.appendChild(renderer.domElement);
 
 const cube = {
   //Geometry/Shape + Size of 3D Object
-  geometry: new THREE.CubeGeometry(4,4,4),
+  geometry: new THREE.CubeGeometry(10,10,10),
   //The material / appearance of the cube
-  material: new THREE.MeshBasicMaterial({color: 0x00FFFF})
+  material: new THREE.MeshBasicMaterial({color: 0x000000})
 };
 
 // Mesh = the combination of the geometry and material
@@ -29,9 +29,9 @@ cube.mesh = new THREE.Mesh(cube.geometry, cube.material);
 scene.add(cube.mesh);
 
 //Camera Position = The user's view
-camera.position.z = 25;
-camera.position.x = 3;
-camera.position.y = -24;
+camera.position.z = 20;
+camera.position.x = 1;
+camera.position.y = -10;
 
 function render(){
 //Render the scene and camera => Outputs the scene and Camera
@@ -57,3 +57,6 @@ document.querySelector("#button").addEventListener("click",function(){
     const randomPrompt = prompts[Math.floor(Math.random()*prompts.length)]
     document.getElementById("prompt").value = randomPrompt;
 })
+
+// var img = document.createElement("img");
+// document.write("<img src= " + "https://blog.hubspot.com/hs-fs/hubfs/2-min.png?width=598&name=2-min.png" + ">") ;
