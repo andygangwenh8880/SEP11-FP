@@ -1,22 +1,22 @@
 html,body{
     background:url(Galaxy.jpg) center center fixed;
-    /*: linear-gradient(90deg, rgba(227,3,3,1) 0%, rgba(121,16,9,1) 35%, rgba(0,212,255,1) 100%);*/
+    /*linear-gradient(90deg, rgba(227,3,3,1) 0%, rgba(121,16,9,1) 35%, rgba(0,212,255,1) 100%);*/
 }
 
 #text{
      color:white;
-     width:1220px;
+     width:1280px;
      background:linear-gradient(90deg, rgba(227,3,3,1) 0%, rgba(121,16,9,1) 35%, rgba(0,212,255,1) 100%);
      font-size:20px;
      position:relative;
      bottom:5px;
-     left:40px;
+     left:20px;
      height:500px;
 
 }
 
 #Color{
-    Color:Beige;
+    Color:cyan;
     font-size:30px;
     position:relative;
     left:40px;
@@ -24,13 +24,13 @@ html,body{
 }
 
 #date1{
-    background:Cyan;
+    background:lightgreen;
     position:relative;
     left:40px;
     bottom:3px;
     height:25px;
     width:100px;
-    border:5px solid green;
+    border:5px solid darkblue;
     font-size:18px;
 }
 
@@ -50,9 +50,9 @@ html,body{
    position:relative;
    left:50px;
    border-radius:25px;
-   background-color:orange;
-   border:solid 5px lightgreen;
-   color:purple;
+   background-color:black;
+   border:solid 5px white;
+   color:white;
 }
 
 h1{
@@ -60,8 +60,14 @@ h1{
     text-align:center;
 }
 
-img{
+#img{
     display:block;
     margin-left:auto;
     margin-right:auto;
+    height:500px;
+    width:500px;
+}
+
+p{
+  color:white;
 }
