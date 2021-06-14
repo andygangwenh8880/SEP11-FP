@@ -102,4 +102,7 @@ document.querySelector("#button").addEventListener("click",function(){
     document.getElementById("prompt").value = randomPrompt;
 })
 
-
+alert("Welcome to the Galactic Journal! A place for you to record all your personal thoughts.");
+alert("There are random prompts for you to write about if you have no idea what to write about and there are positive quotes at the bottom.")
+alert("If you would like to see a different quote, please click on the middle rotating cube.");
+alert("Without further ado, HAVE FUN JOURNALING!");
