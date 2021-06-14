@@ -1,13 +1,14 @@
 
 const scene = new THREE.Scene();
 
+const camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
 /* (
   - How wide the camera view will be for the user (Low # = Too wide => Figure will not fit screen)
   - Width/Height => Make the shape proportional
   - Elements closer to this number won’t be seen
   - Max distance we will see from camera’s view
+  )
 */
-const camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
 
 // The renderer: something that draws 3D objects onto the canvas
 const renderer = new THREE.WebGLRenderer({ alpha: true } );
@@ -71,7 +72,6 @@ domEvents.addEventListener(cube.mesh,'click',event=>{
 })
 
 
-
 function render(){
 //Render the scene and camera => Outputs the scene and Camera
 renderer.render(scene, camera);
@@ -88,10 +88,6 @@ cube.mesh2.rotation.y -=0.03;
 
 requestAnimationFrame(render);
 
-//Render the background image and camera
-  // renderer.autoClear = true;
-  // renderer.clear();
-  // renderer.render(scene, camera);
 };
 
 render();
